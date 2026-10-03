@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPENT</title>
+<meta name="description" content="הזמנה לעיר משותפת ב-SPENT">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SPENT">
+<meta property="og:title" content="SPENT">
+<meta property="og:description" content="הזמנה לעיר משותפת">
+<meta property="og:image" content="https://spentapp.github.io/og-invite.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://spentapp.github.io/join">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+  <img class="logo" src="/logo.png" alt="SPENT">
+  <p class="city" id="city">הוזמנת לעיר משותפת</p>
+  <p class="muted" id="from"></p>
+  <div class="code" id="code" hidden></div>
+  <a class="btn" id="open" href="spentapp://join">פתיחה ב-SPENT</a>
+  <button class="btn ghost" id="copy" hidden>העתקת הקוד</button>
+  <p class="muted">אם SPENT מותקנת, הקישור פותח אותה ישר על ההצטרפות.</p>
+</main>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var code = (q.get('code') || q.get('c') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 8);
+  var city = (q.get('city') || '').slice(0, 60);
+  var from = (q.get('from') || '').slice(0, 40);
+  if (city) document.getElementById('city').textContent = 'הוזמנת ל״' + city + '״';
+  if (from) document.getElementById('from').textContent = 'הזמנה מאת ' + from;
+  if (code.length === 8) {
+    var box = document.getElementById('code');
+    box.textContent = code; box.hidden = false;
+    var link = 'spentapp://join?code=' + code + (city ? '&city=' + encodeURIComponent(city) : '') + (from ? '&from=' + encodeURIComponent(from) : '');
+    document.getElementById('open').href = link;
+    var copy = document.getElementById('copy');
+    copy.hidden = false;
+    copy.onclick = function () {
+      navigator.clipboard.writeText(code).then(function () { copy.textContent = 'הקוד הועתק'; });
+    };
+  }
+})();
+</script>
+</body>
+</html>
