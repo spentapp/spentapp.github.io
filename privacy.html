@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדיניות פרטיות | SPENT Privacy Policy</title>
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --primary-light: #EEF2FF;
+            --text-main: #0F172A;
+            --text-secondary: #475569;
+            --bg-page: #F8FAFC;
+            --bg-card: #FFFFFF;
+            --border-color: #E2E8F0;
+            --success: #10B981;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #6366F1;
+                --primary-light: #1E1B4B;
+                --text-main: #F8FAFC;
+                --text-secondary: #94A3B8;
+                --bg-page: #0B0F19;
+                --bg-card: #151C2C;
+                --border-color: #242E42;
+                --success: #34D399;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            line-height: 1.65;
+            padding: 24px 16px;
+        }
+
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border-color);
+            padding: 40px 32px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 28px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 32px;
+        }
+
+        .app-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .lang-switch {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 6px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: #FFFFFF;
+            border-color: var(--primary);
+        }
+
+        .highlight-box {
+            background: var(--primary-light);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 18px;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .highlight-box .icon {
+            font-size: 24px;
+            line-height: 1;
+        }
+
+        .highlight-box p {
+            font-size: 14px;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        section {
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        p {
+            font-size: 14.5px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        ul {
+            padding-right: 20px;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            font-size: 14.5px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .footer {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        [dir="ltr"] {
+            direction: ltr;
+            text-align: left;
+        }
+
+        [dir="ltr"] ul {
+            padding-right: 0;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="app-badge">
+            <span>🏙️</span> SPENT
+        </div>
+        <h1 id="title">מדיניות פרטיות</h1>
+        <p class="subtitle" id="subtitle">עדכון אחרון: אוקטובר 2026 | Last updated: October 2026</p>
+        
+        <div class="lang-switch">
+            <button class="lang-btn active" onclick="setLang('he')">עברית</button>
+            <button class="lang-btn" onclick="setLang('en')">English</button>
+        </div>
+    </div>
+
+    <!-- Hebrew Content -->
+    <div id="content-he">
+        <div class="highlight-box">
+            <span class="icon">🛡️</span>
+            <p><strong>העיקרון המנחה של SPENT:</strong> החשבון האישי נשמר בנפרד ואינו נחשף למשתתפי העיר. נתוני ערים משותפות נשמרים בשרת מאובטח ונגישים רק לחברי העיר (ראו סעיף 5א). כל חברי העיר יכולים להוסיף, לערוך ולמחוק הוצאות. באפליקציה, רק בעל העיר יכול לעדכן את היעד החודשי ואת תמונת העיר. קליטה אוטומטית מ־Wallet ומקיצורים נשמרת בחשבון האישי כברירת מחדל; ניתן לבחור עיר משותפת כיעד. אם העיר אינה זמינה או שמטבע התשלום אינו תואם, ההוצאה נשמרת בחשבון האישי.</p>
+        </div>
+
+        <section>
+            <h2>1. עיבוד ושמירה מקומיים</h2>
+            <p>פרטי העסקאות, התקציבים ונתוני העיר נשמרים מקומית במכשיר באמצעות SwiftData. הנתונים האישיים לא עוברים לשרת של SPENT ומגובים ב־iCloud האישי שלך. ערים משותפות נשמרות בשרת כמתואר בסעיף 5א.</p>
+        </section>
+
+        <section>
+            <h2>2. ללא מעקב וללא פרסום</h2>
+            <p>בהתאם להנחיות הפרטיות של Apple (App Store Review Guidelines 5.1.1):</p>
+            <ul>
+                <li>SPENT אינה משתמשת במידע הפיננסי שלך לצורכי מעקב, פרסום או פרופיל משתמש, ואינה שולחת את פרטי העסקאות לשירותי אנליטיקה של צד שלישי.</li>
+                <li>האפליקציה אינה כוללת ספריות צד שלישי למעקב פרסומי (ללא Facebook SDK, Google AdMob וכיו״ב).</li>
+                <li>איננו עוקבים אחר זהותך או פעילותך באפליקציות ואתרים אחרים, ומזהה המעקב של Apple (IDFA) אינו פעיל ואינו מבוקש.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. קליטת עסקאות באמצעות Shortcuts</h2>
+            <p>SPENT אינה ניגשת ל-Apple Pay או ל-Wallet ישירות. אם בחרת להגדיר אוטומציה אישית ב-Shortcuts, iOS מעביר ל-SPENT את פרטי העסקה שהוגדרו באוטומציה. פרטי העסקה נשמרים בעיר האישית במכשיר. אם בחרת עיר משותפת כיעד, הם נשמרים בעיר המשותפת כמתואר בסעיף 5א. הם אינם נשלחים לשום שירות צד שלישי אחר.</p>
+        </section>
+
+        <section>
+            <h2>4. שערי מטבע</h2>
+            <p>לצורך המרת מט"ח, SPENT מבקשת משירות שערי חליפין את המטבעות הדרושים לחישוב. הבקשה אינה כוללת שמות בתי עסק, סכומי עסקאות או היסטוריית הוצאות. כמו בכל בקשת אינטרנט, ספק השירות עשוי לקבל מידע טכני של החיבור בהתאם למדיניות שלו.</p>
+        </section>
+
+        <section>
+            <h2>4א. מצב טיול ומיקום</h2>
+            <p>מצב טיול כבוי כברירת מחדל ואינו פועל אלא אם הפעלת אותו בהגדרות. כשהוא מופעל, SPENT מבקשת הרשאת מיקום "בזמן שימוש" כדי לזהות באיזו מדינה אתה נמצא ולהציע את המטבע המקומי להוצאות חדשות. נעשה שימוש במיקום משוער בלבד. נשמרים במכשיר רק קוד המדינה האחרון, מועד הזיהוי ואזור הזמן של המכשיר. המיקום אינו נשלח לשרת של SPENT או לצד שלישי, ואינו משמש לפרסום או למעקב. כדי לזהות את שם המדינה, iOS עשוי להמיר את המיקום המשוער למדינה באמצעות שירותי המפות של Apple, בהתאם למדיניות הפרטיות של Apple. אפשר לכבות את המצב בכל עת בהגדרות, וכיבויו מוחק את קוד המדינה השמור.</p>
+        </section>
+
+        <section>
+            <h2>5. שליטה, ייצוא ומחיקה</h2>
+            <p>המידע שלך נשאר בשליטתך המלאה:</p>
+            <ul>
+                <li>אפשר לייצא גיבוי מקומי ולמחוק את נתוני SPENT מהמכשיר דרך ההגדרות.</li>
+                <li>קבצי גיבוי שייצאת בעצמך נשארים בשליטתך ויש למחוק אותם בנפרד.</li>
+                <li>מחיקת האפליקציה מסירה את מסדי הנתונים המקומיים. היא אינה מוחקת נתוני ערים משותפות מהשרת; לשם כך מוחקים את החשבון באפליקציה (סעיף 5א).</li>
+            </ul>
+        </section>
+
+
+        <section>
+            <h2>5א. ערים משותפות וחשבון</h2>
+            <p>ערים משותפות הן החלק היחיד ב־SPENT שנשמר בשרת. כדי להשתמש בהן מתחברים עם Apple (Sign in with Apple), בלי סיסמה. הנתונים נשמרים אצל Supabase, ספק תשתית, בשרתים באיחוד האירופי (פרנקפורט), ומוצפנים בהעברה ובאחסון.</p>
+            <ul>
+                <li><strong>מה נשמר:</strong> מזהה החשבון שמסרה Apple, כתובת האימייל שמסרה Apple (יכולה להיות כתובת מוסתרת של Apple), השם שבחרת לעצמך בכל עיר, פרטי העיר (שם, מטבע, יעד חודשי, סגנון), והוצאות העיר: סכום, בית עסק, קטגוריה, תאריך, הערה, מי שילם וחלוקת התשלום.</li>
+                <li><strong>מי רואה:</strong> רק החברים הפעילים באותה עיר; השרת עצמו אוכף זאת. מי שעזב או הוסר מאבד גישה. מפעיל SPENT יכול לגשת לנתונים לצורכי תפעול ותמיכה בלבד, והנתונים אינם נמכרים ואינם משמשים לפרסום.</li>
+                <li><strong>מה לא נשמר בשרת:</strong> העיר האישית, ההיסטוריה האישית והתקציבים האישיים.</li>
+                <li><strong>מחיקת הוצאה:</strong> הוצאה שנמחקה מוסתרת מכל החברים, ונשמרת בשרת מסומנת כמחוקה כדי שעריכה ישנה לא תחזיר אותה, עד שהעיר נמחקת.</li>
+                <li><strong>עזיבה ומחיקת עיר:</strong> עזיבת עיר מסירה את הגישה שלך; הוצאות שהזנת נשארות בעיר אצל שאר החברים. מחיקת עיר על ידי מי שפתח אותה מוחקת אותה ואת כל ההוצאות שלה לכולם.</li>
+                <li><strong>מחיקת החשבון:</strong> בפרופיל ← חשבון הערים המשותפות. החשבון נמחק מהשרת. ערים שפתחת עוברות לחבר הוותיק ביותר בהן, או נמחקות אם אין בהן אחרים. בערים של אחרים שמך מוחלף ב״משתמש שנמחק״, וההוצאות שהזנת נשארות כדי שהחשבון המשותף ימשיך להסתדר.</li>
+                <li><strong>עותק בטלפון:</strong> כל טלפון שומר עותק של הערים שלו כדי לעבוד גם בלי אינטרנט. העותק נמחק בהתנתקות, במחיקת החשבון או במחיקת האפליקציה.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>6. יצירת קשר</h2>
+            <p>לשאלות, הבהרות או סיוע בנושאי פרטיות, ניתן ליצור קשר ישירות בדוא"ל התמיכה: <a href="mailto:spentapp.support@gmail.com" style="color: var(--primary);">spentapp.support@gmail.com</a>.</p>
+        </section>
+    </div>
+
+    <!-- English Content -->
+    <div id="content-en" style="display: none;" dir="ltr">
+        <div class="highlight-box">
+            <span class="icon">🛡️</span>
+            <p><strong>SPENT Core Privacy Principle:</strong> The Personal ledger stays separate and is not exposed to shared-city members. Shared-city data is stored on a secure server and is available only to that city’s members (see section 5A). Every member can add, edit and delete expenses. In the app, only the city owner can change the monthly target and city picture. Automatic Wallet and Shortcut capture saves to Personal by default; you can choose a shared city instead. If the shared city is unavailable or the payment currency does not match, the expense stays in Personal.</p>
+        </div>
+
+        <section>
+            <h2>1. Local Storage & Processing</h2>
+            <p>Your transaction history, budgets, and city data are stored locally on your device using SwiftData. Personal data never goes to a SPENT server and is backed up in your private iCloud. Shared cities are stored on a server as described in section 5A.</p>
+        </section>
+
+        <section>
+            <h2>2. No Tracking & No Advertising</h2>
+            <p>In accordance with Apple App Store Review Guideline 5.1.1:</p>
+            <ul>
+                <li>SPENT does not use your financial data for tracking, advertising, or user profiling, and does not send transaction details to third-party analytics services.</li>
+                <li>The app contains no third-party ad tracking or behavioral profiling SDKs.</li>
+                <li>Apple's Identifier for Advertisers (IDFA) is neither requested nor used.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. Transaction Ingest via Shortcuts</h2>
+            <p>SPENT does not directly access Apple Pay or Apple Wallet. If you choose to set up a personal automation in Shortcuts, iOS passes the transaction details configured in the automation to SPENT. Transaction details are saved to your Personal city on the device. If you chose a shared city as the destination, they are saved to that shared city as described in section 5A. They are not sent to any other third-party service.</p>
+        </section>
+
+        <section>
+            <h2>4. Foreign Exchange Rates</h2>
+            <p>For foreign exchange conversion, SPENT requests the necessary currencies for calculation from an exchange rate service. The request does not include merchant names, transaction amounts, or spending history. As with any internet request, the service provider may receive technical connection information according to its policy.</p>
+        </section>
+
+        <section>
+            <h2>4A. Travel Mode & Location</h2>
+            <p>Travel Mode is off by default and does nothing unless you turn it on in Settings. When enabled, SPENT asks for "While Using the App" location permission to detect which country you are in and suggest the local currency for new expenses. Only approximate location is used. Just the last country code, the time of detection, and the device time zone are stored on your device. Your location is not sent to a SPENT server or to any third party, and is not used for advertising or tracking. To find the country, iOS may resolve the approximate location through Apple's mapping services, under Apple's privacy policy. You can turn the mode off at any time in Settings, which also deletes the stored country code.</p>
+        </section>
+
+        <section>
+            <h2>5. Control, Export & Deletion</h2>
+            <p>You maintain control of your data:</p>
+            <ul>
+                <li>You can export a local backup and delete SPENT data from your device through Settings.</li>
+                <li>Backup files you exported yourself remain under your control and must be deleted separately.</li>
+                <li>Deleting the app removes local databases. It does not delete shared-city data from the server; to do that, delete your account in the app (section 5A).</li>
+            </ul>
+        </section>
+
+
+        <section>
+            <h2>5A. Shared Cities & Account</h2>
+            <p>Shared cities are the only part of SPENT stored on a server. Using them requires Sign in with Apple; there is no password. The data is stored with Supabase, an infrastructure provider, on servers in the European Union (Frankfurt), encrypted in transit and at rest.</p>
+            <ul>
+                <li><strong>What is stored:</strong> the account identifier provided by Apple, the email address provided by Apple (which may be an Apple private relay address), the name you chose for yourself in each city, the city’s details (name, currency, monthly target, style), and the city’s expenses: amount, merchant, category, date, note, who paid and how the payment was split.</li>
+                <li><strong>Who can see it:</strong> only the active members of that city; the server itself enforces this. Members who leave or are removed lose access. The SPENT operator can access the data for operation and support only; it is not sold and not used for advertising.</li>
+                <li><strong>Not stored on the server:</strong> your Personal city, personal history and personal budgets.</li>
+                <li><strong>Deleting an expense:</strong> a deleted expense is hidden from all members and kept on the server marked as deleted, so that an old edit cannot bring it back, until the city is deleted.</li>
+                <li><strong>Leaving or deleting a city:</strong> leaving removes your access; expenses you entered stay in the city for the other members. When the city’s owner deletes it, the city and all its expenses are deleted for everyone.</li>
+                <li><strong>Deleting your account:</strong> Profile → Shared Cities Account. The account is deleted from the server. Cities you opened pass to their longest-standing member, or are deleted if nobody else is in them. In other people’s cities your name is replaced with “Deleted user” and the expenses you entered stay so the shared balance still adds up.</li>
+                <li><strong>Copy on the phone:</strong> each phone keeps a copy of its cities so it works offline. The copy is removed when you sign out, delete your account or delete the app.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>6. Contact & Inquiries</h2>
+            <p>If you have any questions regarding SPENT's privacy practices, please contact us at: <a href="mailto:spentapp.support@gmail.com" style="color: var(--primary);">spentapp.support@gmail.com</a>.</p>
+        </section>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 SPENT. All rights reserved. Built with privacy by design.</p>
+    </div>
+</div>
+
+<script>
+    function setLang(lang) {
+        const heContent = document.getElementById('content-he');
+        const enContent = document.getElementById('content-en');
+        const title = document.getElementById('title');
+        const btns = document.querySelectorAll('.lang-btn');
+
+        if (lang === 'en') {
+            heContent.style.display = 'none';
+            enContent.style.display = 'block';
+            document.documentElement.dir = 'ltr';
+            document.documentElement.lang = 'en';
+            title.textContent = 'Privacy Policy';
+            document.getElementById('subtitle').textContent = 'Last updated: October 2026';
+            btns[0].classList.remove('active');
+            btns[1].classList.add('active');
+        } else {
+            heContent.style.display = 'block';
+            enContent.style.display = 'none';
+            document.documentElement.dir = 'rtl';
+            document.documentElement.lang = 'he';
+            title.textContent = 'מדיניות פרטיות';
+            document.getElementById('subtitle').textContent = 'עדכון אחרון: אוקטובר 2026';
+            btns[0].classList.add('active');
+            btns[1].classList.remove('active');
+        }
+    }
+</script>
+
+</body>
+</html>
