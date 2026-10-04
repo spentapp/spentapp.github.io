@@ -31,7 +31,8 @@
 </main>
 <script>
 (function () {
-  var q = new URLSearchParams(location.search);
+  // Friend links carry their token in the fragment (#), which is never sent to this server.
+  var q = new URLSearchParams(location.hash.length > 1 ? location.hash.slice(1) : location.search);
   var code = (q.get('code') || q.get('c') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 8);
   var city = (q.get('city') || '').slice(0, 60);
   var from = (q.get('from') || '').slice(0, 40);
