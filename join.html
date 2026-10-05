@@ -22,12 +22,12 @@
 <body>
 <main>
   <img class="logo" src="/logo.png" alt="SPENT">
-  <p class="city" id="city">הוזמנת לעיר משותפת</p>
+  <p class="city" id="city">הזמנה ל-SPENT</p>
   <p class="muted" id="from"></p>
   <div class="code" id="code" hidden></div>
-  <a class="btn" id="open" href="spentapp://join">פתיחה ב-SPENT</a>
+  <a class="btn" id="open" href="spentapp://">פתיחה ב-SPENT</a>
   <button class="btn ghost" id="copy" hidden>העתקת הקוד</button>
-  <p class="muted">אם SPENT מותקנת, הקישור פותח אותה ישר על ההצטרפות.</p>
+  <p class="muted" id="hint">אם SPENT מותקנת, הקישור פותח אותה ישר על ההזמנה.</p>
 </main>
 <script>
 (function () {
@@ -38,12 +38,23 @@
   var from = (q.get('from') || '').slice(0, 40);
   if (city) document.getElementById('city').textContent = 'הוזמנת ל״' + city + '״';
   if (from) document.getElementById('from').textContent = 'הזמנה מאת ' + from;
+  // Permanent friend code (QR / shared link): …/join#fcode=<64 hex>&from=NAME. Opening it in
+  // SPENT shows "send a friend request"; the code's owner approves.
+  var fcode = (q.get('fcode') || '').toLowerCase();
+  if (/^[0-9a-f]{64}$/.test(fcode)) {
+    document.getElementById('city').textContent = from ? 'להתחבר עם ' + from + ' ב-SPENT' : 'בקשת חברות ב-SPENT';
+    document.getElementById('from').textContent = 'אחרי האישור תוכלו לבקר אחד בעיר של השני';
+    document.getElementById('hint').textContent = 'אם SPENT מותקנת, הכפתור פותח אותה ישר על בקשת החברות.';
+    document.getElementById('open').href = 'spentapp://friends?fcode=' + fcode + (from ? '&from=' + encodeURIComponent(from) : '');
+    return;
+  }
   // Friend invitation: …/join?friend=<64 hex>&from=NAME (the app opens it directly when installed).
   var friend = (q.get('friend') || '').toLowerCase();
   if (/^[0-9a-f]{64}$/.test(friend)) {
     document.getElementById('city').textContent = from ? from + ' מזמין/ה אותך להיות חברים ב-SPENT' : 'הוזמנת להיות חברים ב-SPENT';
     document.getElementById('from').textContent = '';
     document.getElementById('open').href = 'spentapp://friends?token=' + friend + (from ? '&from=' + encodeURIComponent(from) : '');
+    document.getElementById('hint').textContent = 'אם SPENT מותקנת, הכפתור פותח אותה ישר על ההזמנה.';
     var copyLink = document.getElementById('copy');
     copyLink.textContent = 'העתקת הקישור';
     copyLink.hidden = false;
@@ -53,6 +64,7 @@
     return;
   }
   if (code.length === 8) {
+    if (!city) document.getElementById('city').textContent = 'הוזמנת לעיר משותפת';
     var box = document.getElementById('code');
     box.textContent = code; box.hidden = false;
     var link = 'spentapp://join?code=' + code + (city ? '&city=' + encodeURIComponent(city) : '') + (from ? '&from=' + encodeURIComponent(from) : '');
