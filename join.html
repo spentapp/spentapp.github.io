@@ -15,6 +15,8 @@
 <meta property="og:url" content="https://spentapp.github.io/join">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-NeiTTcOxW/49OkqP2HaWxvdPgd7A7cDj+3l6qsPQUAk='; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
 <link rel="icon" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/style.css">
@@ -31,9 +33,14 @@
 </main>
 <script>
 (function () {
-  // Friend links carry their token in the fragment (#), which is never sent to this server.
-  var q = new URLSearchParams(location.hash.length > 1 ? location.hash.slice(1) : location.search);
-  var code = (q.get('code') || q.get('c') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 8);
+  // Friend links and encrypted-city keys travel in the fragment (#), which is never sent to
+  // this server. This page reads it only to hand it to the app; it loads nothing from anywhere.
+  var search = new URLSearchParams(location.search);
+  var hash = new URLSearchParams(location.hash.length > 1 ? location.hash.slice(1) : '');
+  // An encrypted city: "#k=<key>&c=<city>". The code alone cannot open it, so it is not shown.
+  var secret = (hash.get('k') && /^[0-9a-f-]{36}$/i.test(hash.get('c') || '')) ? location.hash.slice(1) : '';
+  var q = (search.get('code') || secret) ? search : (location.hash.length > 1 ? hash : search);
+  var code = (q.get('code') || (secret ? '' : q.get('c')) || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 8);
   var city = (q.get('city') || '').slice(0, 60);
   var from = (q.get('from') || '').slice(0, 40);
   if (city) document.getElementById('city').textContent = 'הוזמנת ל״' + city + '״';
@@ -60,6 +67,19 @@
     copyLink.hidden = false;
     copyLink.onclick = function () {
       navigator.clipboard.writeText(location.href).then(function () { copyLink.textContent = 'הקישור הועתק'; });
+    };
+    return;
+  }
+  if (code.length === 8 && secret) {
+    if (!city) document.getElementById('city').textContent = 'הוזמנת לעיר משותפת';
+    document.getElementById('open').href = 'spentapp://join?code=' + code + (city ? '&city=' + encodeURIComponent(city) : '') +
+      (from ? '&from=' + encodeURIComponent(from) : '') + '#' + secret;
+    document.getElementById('hint').textContent = 'העיר הזאת מוצפנת: פתחו את הקישור בטלפון שבו SPENT מותקנת, ובגרסה העדכנית.';
+    var copyFull = document.getElementById('copy');
+    copyFull.textContent = 'העתקת הקישור';
+    copyFull.hidden = false;
+    copyFull.onclick = function () {
+      navigator.clipboard.writeText(location.href).then(function () { copyFull.textContent = 'הקישור הועתק'; });
     };
     return;
   }
