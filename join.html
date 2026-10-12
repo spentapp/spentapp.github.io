@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="noindex">
 <meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-NeiTTcOxW/49OkqP2HaWxvdPgd7A7cDj+3l6qsPQUAk='; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-mNZYCATz9LgW42c1oKJEOhD4jXFxG3Pv6ZzB6oGvGX0='; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
 <link rel="icon" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/style.css">
@@ -72,8 +72,11 @@
   }
   if (code.length === 8 && secret) {
     if (!city) document.getElementById('city').textContent = 'הוזמנת לעיר משותפת';
-    document.getElementById('open').href = 'spentapp://join?code=' + code + (city ? '&city=' + encodeURIComponent(city) : '') +
-      (from ? '&from=' + encodeURIComponent(from) : '') + '#' + secret;
+    var params = 'code=' + code + (city ? '&city=' + encodeURIComponent(city) : '') + (from ? '&from=' + encodeURIComponent(from) : '');
+    // Android: open SPENT by its package name, so no other app that claims spentapp:// gets the key.
+    document.getElementById('open').href = /Android/i.test(navigator.userAgent)
+      ? 'intent://join?' + params + '&secret=' + encodeURIComponent(secret) + '#Intent;scheme=spentapp;package=com.biniwis.spent;end'
+      : 'spentapp://join?' + params + '#' + secret;
     document.getElementById('hint').textContent = 'העיר הזאת מוצפנת: פתחו את הקישור בטלפון שבו SPENT מותקנת, ובגרסה העדכנית.';
     var copyFull = document.getElementById('copy');
     copyFull.textContent = 'העתקת הקישור';
