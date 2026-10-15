@@ -3,7 +3,7 @@
   "revision": 1,
 
   "features": {
-    "sharedE2EEEnabled": false,
+    "sharedE2EEEnabled": true,
     "sharedCreateJoinEnabled": true,
     "sharedWritesEnabled": true,
     "notifications": true,
