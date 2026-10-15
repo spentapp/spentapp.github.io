@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="noindex">
 <meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-mNZYCATz9LgW42c1oKJEOhD4jXFxG3Pv6ZzB6oGvGX0='; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-o20B1s3bpFJz/jnzyxj7op89YtHeMXJyewzeys1pmcA='; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
 <link rel="icon" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/style.css">
@@ -77,7 +77,7 @@
     document.getElementById('open').href = /Android/i.test(navigator.userAgent)
       ? 'intent://join?' + params + '&secret=' + encodeURIComponent(secret) + '#Intent;scheme=spentapp;package=com.biniwis.spent;end'
       : 'spentapp://join?' + params + '#' + secret;
-    document.getElementById('hint').textContent = 'העיר הזאת מוצפנת: פתחו את הקישור בטלפון שבו SPENT מותקנת, ובגרסה העדכנית.';
+    document.getElementById('hint').textContent = 'כדי שהכול יעבוד, חשוב ששתי האפליקציות מעודכנות לגרסה האחרונה.';
     var copyFull = document.getElementById('copy');
     copyFull.textContent = 'העתקת הקישור';
     copyFull.hidden = false;
