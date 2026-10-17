@@ -328,6 +328,34 @@ html.scrolled nav.main a:not(.go){opacity:0;transform:translateY(-8px);pointer-e
  .ph figcaption b{font-size:15.5px}
  .ph figcaption span{font-size:13.5px}
 }
+
+/* ===== mobile first pass (phones are where most people meet SPENT) ===== */
+@media (max-width:900px){
+ /* thumbs first: the one action lives at the bottom of the screen, not the top corner */
+ nav.main{top:auto;bottom:calc(14px + env(safe-area-inset-bottom));inset-inline-end:auto;left:50%;transform:translate(-50%,0);transition:transform .45s cubic-bezier(.16,1,.3,1),opacity .3s ease}
+ nav.main a.go{margin:0;padding:15px 30px;font-size:16.5px;box-shadow:0 10px 30px rgba(0,0,0,.22);white-space:nowrap}
+ html:not(.scrolled) nav.main,html.at-end nav.main{transform:translate(-50%,140%);opacity:0;pointer-events:none}
+ .lang{padding:12px 4px;margin:-12px 0}
+ section{padding:38px 0}
+ /* hero: the statement and the city own the first screen */
+ .hero{padding-top:14px}
+ .hero h1{font-size:clamp(44px,13.4vw,60px);line-height:.96;margin-bottom:16px}
+ html[lang=he] .hero h1{font-size:clamp(42px,12.4vw,56px);line-height:1.04}
+ .hero .lead{font-size:17px;margin-bottom:22px}
+ .hero .badges{gap:10px}
+ .hero .stage{width:calc(100% + 40px);margin:-10px -20px -30px}
+ /* story: a smaller world card pinned high, each chapter readable right under it */
+ .xcard{top:calc(10px + env(safe-area-inset-top));height:38vh;height:38svh}
+ .ch{min-height:64vh;min-height:64svh;padding-top:22px;gap:10px;opacity:.35}
+ .ch h2{font-size:28px}
+ .ch p{font-size:17px;line-height:1.6}
+ .ch .chico{width:60px;height:60px}
+ /* reading text a touch larger, cards edge to edge */
+ .what-txt p{font-size:18px;line-height:1.65}
+ .fit{border-radius:22px}
+ summary{min-height:44px}
+ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+}
 @media (max-width:560px){.badge{height:52px}.badge b{font-size:21px}}
 
 @media (max-width:900px){

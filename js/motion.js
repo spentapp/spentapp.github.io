@@ -195,6 +195,12 @@
     sec.addEventListener('pointerleave', function () { q.forEach(function (o) { o.ry(0); o.rx(0); o.sc(1); }); });
   })();
 
+  /* the bottom Download pill on phones steps away when the page's own download buttons are on screen */
+  (function () {
+    var fin = document.querySelector('.final') || document.querySelector('.dl-hero');
+    if (fin) ScrollTrigger.create({ trigger: fin, start: 'top 85%', end: 'bottom top', onToggle: function (s) { root.classList.toggle('at-end', s.isActive); } });
+  })();
+
   /* ---------- the story: a carousel of living cities that slides with the chapters ---------- */
   var story = document.querySelector('.story');
   var cfg = window.SPENT;
@@ -313,7 +319,7 @@
   var tick = false;
   function onScroll() {
     tick = false;
-    var line = innerHeight * (matchMedia('(max-width:900px)').matches ? 0.5 : 0.55), n = chs.length, t = 0;
+    var line = innerHeight * (matchMedia('(max-width:900px)').matches ? 0.62 : 0.55), n = chs.length, t = 0;
     var centers = chs.map(function (c) { var r = c.getBoundingClientRect(); return r.top + r.height / 2; });
     if (line <= centers[0]) t = 0; else if (line >= centers[n - 1]) t = n - 1;
     else { for (var i = 0; i < n - 1; i++) { if (line >= centers[i] && line < centers[i + 1]) { t = i + (line - centers[i]) / (centers[i + 1] - centers[i]); break; } } }
