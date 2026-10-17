@@ -149,13 +149,11 @@
     var small = matchMedia('(max-width:900px)').matches;
     var copy = hero.querySelectorAll('.intro, .cta'); // wrappers; the entrance animates their children, not them
     if (matchMedia('(max-width:600px)').matches) {
-      // phones: the stage is held by CSS sticky; the scroll only swaps the words (opacity) and turns the island inside its own canvas
-      var items = [].slice.call(hero.querySelectorAll('.mi')), N = items.length;
-      ScrollTrigger.create({ trigger: stage, start: 'top top', end: 'bottom bottom', onUpdate: function (s) {
-        var p = s.progress, t = Math.min(1, p / 0.82) * (N - 1);
-        items.forEach(function (el, k) { var d = Math.abs(t - k), o = Math.max(0, Math.min(1, 1 - (d - 0.22) * 4)); el.style.opacity = o.toFixed(3); el.style.transform = 'translate3d(0,' + ((k - t) * 46).toFixed(1) + 'px,0)'; el.style.pointerEvents = o > 0.6 ? 'auto' : 'none'; });
-        spin = p * Math.PI * 2; push();
-      } });
+      // phones: nothing is held or overlaid; the island just turns inside its own canvas while it passes the screen
+      ScrollTrigger.create({ trigger: stage, start: 'top bottom', end: 'bottom top', onUpdate: function (s) { spin = s.progress * Math.PI * 2; push(); } });
+      // the floating Download pill stays away while the page's own App Store button is on screen
+      var badge = hero.querySelector('.cta');
+      if (badge) ScrollTrigger.create({ trigger: badge, start: 'top bottom', end: 'bottom top', onToggle: function (s) { root.classList.toggle('at-top', s.isActive); } });
     } else {
       var tl = gsap.timeline({ scrollTrigger: { trigger: hero, start: 'top top', end: small ? '+=70%' : '+=110%', pin: true, scrub: 0.6,
         onUpdate: function (s) { spin = s.progress * Math.PI * 2; push(); } } });
