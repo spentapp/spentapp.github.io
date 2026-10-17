@@ -622,6 +622,25 @@ html[lang=he] .dl-hero h1{line-height:1.08;letter-spacing:0}
  .story{padding-top:10px}
  html.at-top nav.main{transform:translate(-50%,140%);opacity:0;pointer-events:none}
 }
+
+/* ================= mobile v9: the story as one compact list, all on about one screen ================= */
+@media (max-width:600px){
+ .chapters{gap:8px}
+ .ch,.ch.on{display:grid;grid-template-columns:64px 1fr;column-gap:14px;row-gap:2px;align-items:center;padding:12px 14px;border-radius:20px;min-height:0}
+ .ch .chimg,.ch .chico{grid-row:1 / span 2;grid-column:1;width:64px;height:auto;margin:0;display:block}
+ .ch .chico{width:40px;height:40px;justify-self:center}
+ .ch:has(.chimg) .chico{display:none}
+ .ch:nth-child(1) .chimg,.ch:nth-child(2) .chimg{display:none}
+ .ch:nth-child(1) .chico,.ch:nth-child(2) .chico{display:block}
+ .ch h2{grid-column:2;font-size:17px;line-height:1.2;letter-spacing:-.01em;margin:0}
+ html[lang=he] .ch h2{line-height:1.25}
+ .ch p{grid-column:2;font-size:13.5px;line-height:1.4;margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+ .ch .avs{grid-column:2;margin:6px 0 0;transform:scale(.6);transform-origin:0 50%;height:40px}
+ html[dir=rtl] .ch .avs{transform-origin:100% 50%}
+ .ch .wrow{grid-column:1 / -1;margin:10px -14px 0;padding:0 14px 2px}
+ .ch .wrow figure{flex-basis:30%}
+ .ch .wrow figcaption{font-size:12px}
+}
 @media (max-width:560px){.badge{height:52px}.badge b{font-size:21px}}
 
 @media (max-width:900px){
