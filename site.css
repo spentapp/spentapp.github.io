@@ -641,6 +641,12 @@ html[lang=he] .dl-hero h1{line-height:1.08;letter-spacing:0}
  .ch .wrow figure{flex-basis:30%}
  .ch .wrow figcaption{font-size:12px}
 }
+
+/* desktop: while the island turns and grows on scroll it floats in front of the headline and buttons */
+@media (min-width:601px){
+ .hero .intro,.hero .cta{z-index:2}
+ .hero .stage{position:relative;z-index:8;pointer-events:none}
+}
 @media (max-width:560px){.badge{height:52px}.badge b{font-size:21px}}
 
 @media (max-width:900px){
