@@ -222,7 +222,6 @@
     // phones get a plain sequence of pictures + words (see CSS): just let each picture settle in once
     chs.forEach(function (c) {
       var im = c.querySelector('.chimg');
-      gsap.fromTo(c, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: 'expo.out', scrollTrigger: { trigger: c, start: 'top 88%', once: true } });
       if (im) gsap.fromTo(im, { scale: 0.92, rotation: -2 }, { scale: 1, rotation: 0, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: c, start: 'top 88%', once: true } });
     });
     return;

@@ -491,6 +491,32 @@ html[lang=he] .dl-hero h1{line-height:1.08;letter-spacing:0}
  .final h2{font-size:26px}
  footer{font-size:13px}
 }
+
+/* ================= mobile v4, after stryds.com: an entry screen, a floating dock, stacking cards ================= */
+.hero-logo,.dock-logo{display:none}
+@media (max-width:600px){
+ /* entry screen: the 3D logo is the first thing you see, with one line and one button */
+ .brand{visibility:hidden}
+ .hero{min-height:calc(100svh - 70px);display:flex;flex-direction:column;justify-content:center;padding:0 0 10px}
+ .hero-logo{display:block;width:min(78%,330px);height:auto;margin:0 auto 18px}
+ .hero h1{font-size:30px;line-height:1.08}
+ html[lang=he] .hero h1{font-size:30px}
+ .hero .lead{font-size:15.5px;margin-bottom:18px}
+ .hero .stage{margin-top:6px}
+ /* the dock: logo + Download, floating at the bottom like an app tab bar */
+ nav.main{display:flex;align-items:center;gap:10px;background:rgba(24,24,24,.92);-webkit-backdrop-filter:blur(16px) saturate(1.4);backdrop-filter:blur(16px) saturate(1.4);padding:7px 7px 7px 14px;border-radius:999px;box-shadow:0 12px 34px rgba(0,0,0,.25)}
+ html[dir=rtl] nav.main{padding:7px 14px 7px 7px}
+ .dock-logo{display:block;height:26px;width:auto}
+ nav.main a.go{background:var(--green);color:#fff;padding:11px 20px;font-size:15px;box-shadow:none}
+ /* chapters: big rounded cards that stack over each other as you scroll */
+ .chapters{gap:0}
+ .ch,.ch.on{position:sticky;top:calc(12px + var(--i,0) * 9px);display:flex;flex-direction:column;justify-content:flex-start;gap:6px;min-height:66vh;min-height:66svh;margin:0 0 16px;padding:22px 20px 18px;background:#fff;border-radius:28px;box-shadow:0 -2px 0 rgba(0,0,0,.02),0 10px 30px rgba(0,0,0,.09);opacity:1}
+ .ch .chico{width:42px;height:42px}
+ .ch h2{font-size:24px;margin-top:4px}
+ .ch p{font-size:15px}
+ .chimg{display:block;width:100%;margin:auto 0 -6px;height:auto}
+ .ch .wrow{margin:auto -20px 0;padding:0 20px 4px}
+}
 @media (max-width:560px){.badge{height:52px}.badge b{font-size:21px}}
 
 @media (max-width:900px){
