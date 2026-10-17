@@ -316,7 +316,7 @@ html.scrolled nav.main a:not(.go){opacity:0;transform:translateY(-8px);pointer-e
 /* touch: the live cities never swallow a swipe. A transparent layer sits over every iframe so the page scrolls. */
 .city-card::after,.xsl::after{content:'';position:absolute;inset:0;z-index:4;touch-action:pan-y}
 .hero .stage{pointer-events:auto}
-.hero>div:first-child{position:relative;z-index:6}
+.hero .intro,.hero .cta{position:relative;z-index:6}
 @media (max-width:900px){
  /* the sticky world card on phones: a band of page colour above and a soft fade below, so chapter text never peeks around it */
  .xcard{box-shadow:0 -80px 0 0 #FFF6EC,0 26px 22px 2px #FFF6EC}
@@ -516,6 +516,25 @@ html[lang=he] .dl-hero h1{line-height:1.08;letter-spacing:0}
  .ch p{font-size:15px}
  .chimg{display:block;width:100%;margin:auto 0 -6px;height:auto}
  .ch .wrow{margin:auto -20px 0;padding:0 20px 4px}
+}
+
+/* ================= mobile v5: an entry screen that is only an entry screen, then one thing per screen ================= */
+.hint{display:none}
+@media (max-width:600px){
+ .hero{display:flex;flex-direction:column;min-height:0;padding:0;justify-content:flex-start}
+ .hero .intro{order:1;min-height:calc(100svh - 64px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding-bottom:40px;position:relative}
+ .hero-logo{width:min(84%,360px);margin:0 auto 22px}
+ .hero h1{font-size:23px;line-height:1.25;font-weight:700;letter-spacing:-.01em;color:rgba(0,0,0,.5);margin:0}
+ html[lang=he] .hero h1{font-size:23px;font-weight:600}
+ .hint{display:block;position:absolute;bottom:22px;left:50%;width:22px;height:36px;margin-left:-11px;border:2px solid rgba(0,0,0,.22);border-radius:12px}
+ .hint::after{content:'';position:absolute;left:50%;top:7px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:rgba(0,0,0,.35);animation:hint 1.6s ease-in-out infinite}
+ @keyframes hint{0%{transform:translateY(0);opacity:1}70%{transform:translateY(12px);opacity:0}100%{opacity:0}}
+ .hero .stage{order:2;margin:0 -18px;width:calc(100% + 36px)}
+ .hero .cta{order:3;text-align:center;padding:4px 0 26px}
+ .hero .cta .lead{font-size:17px;line-height:1.5;color:var(--ink);font-weight:500;max-width:19em;margin:0 auto 18px}
+ /* statements: each sentence gets the whole screen */
+ .manifesto{min-height:88svh;display:flex;align-items:center;padding:20px 0}
+ .manifesto p{font-size:32px;line-height:1.2;text-align:center;margin:0 auto}
 }
 @media (max-width:560px){.badge{height:52px}.badge b{font-size:21px}}
 

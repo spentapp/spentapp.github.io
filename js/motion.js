@@ -146,11 +146,19 @@
       try { if (f && f.contentWindow.setCityLook) f.contentWindow.setCityLook(look.x + spin, look.y); } catch (err) {}
     }
     var small = matchMedia('(max-width:900px)').matches;
-    var copy = hero.firstElementChild; // the wrapper of headline, line and buttons (the entrance animates its children, not it)
-    var tl = gsap.timeline({ scrollTrigger: { trigger: hero, start: 'top top', end: small ? '+=70%' : '+=110%', pin: true, scrub: 0.6,
-      onUpdate: function (s) { spin = s.progress * Math.PI * 2; push(); } } });
-    tl.to(stage, { scale: small ? 1.08 : 1.22, yPercent: small ? -8 : -20, ease: 'none' }, 0)
-      .to(copy, { y: small ? -30 : -70, opacity: 0.12, ease: 'none' }, 0);
+    var copy = hero.querySelectorAll('.intro, .cta'); // wrappers; the entrance animates their children, not them
+    if (matchMedia('(max-width:600px)').matches) {
+      // phones: the entry screen drifts away as you start, then the island turns a full circle while it crosses the screen
+      var intro = hero.querySelector('.intro');
+      gsap.to(intro, { opacity: 0, scale: 0.94, y: -40, ease: 'none', scrollTrigger: { trigger: intro, start: 'top top', end: 'bottom 35%', scrub: 0.4 } });
+      gsap.fromTo(stage, { scale: 0.86 }, { scale: 1.04, ease: 'none', scrollTrigger: { trigger: stage, start: 'top bottom', end: 'bottom top', scrub: 0.5,
+        onUpdate: function (s) { spin = s.progress * Math.PI * 2; push(); } } });
+    } else {
+      var tl = gsap.timeline({ scrollTrigger: { trigger: hero, start: 'top top', end: small ? '+=70%' : '+=110%', pin: true, scrub: 0.6,
+        onUpdate: function (s) { spin = s.progress * Math.PI * 2; push(); } } });
+      tl.to(stage, { scale: small ? 1.08 : 1.22, yPercent: small ? -8 : -20, ease: 'none' }, 0)
+        .to(copy, { y: small ? -30 : -70, opacity: 0.12, ease: 'none' }, 0);
+    }
 
     if (!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
     setTimeout(function () {
