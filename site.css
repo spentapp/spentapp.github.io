@@ -574,6 +574,27 @@ html[lang=he] .dl-hero h1{line-height:1.08;letter-spacing:0}
  .final .andr{color:rgba(255,255,255,.8)}
  .final .badge.apple{border-color:#fff}
 }
+
+/* ================= mobile v7: one composed scene =================
+   the held stage is a single sky-coloured screen: words in the upper half, the island in the lower half, the
+   download moment is the last step of the same scene, then the scene ends and the cards begin */
+@media (max-width:600px){
+ .hero .cta{display:none}
+ .hero .stage{height:520svh;background:linear-gradient(#EEF5FF 0%,#D7E7FF 70%,#CFE2FF 100%);border-radius:0 0 34px 34px}
+ header.top{position:absolute;left:0;right:0;z-index:20;padding-inline:18px}
+ .mi{padding-top:calc(78px + env(safe-area-inset-top))}
+ .mi0 img{width:min(74%,300px);margin:2svh auto 12px}
+ .mi0 b{font-size:20px;color:rgba(0,0,0,.5)}
+ .mi p{margin:4svh 0 0;font-size:42px;color:rgba(0,0,0,.24)}
+ .mi-cta{justify-content:flex-start;gap:16px}
+ .mi-cta .mlead{font-size:24px;line-height:1.25;font-weight:700;letter-spacing:-.02em;color:var(--ink);margin:4svh 0 4px;max-width:14em}
+ html[lang=he] .mi-cta .mlead{letter-spacing:0;font-weight:600}
+ .mi-cta .badges{flex-direction:column;align-items:center;gap:8px}
+ .mi .andr{font-size:13px;line-height:1.4;font-weight:500;letter-spacing:0;color:rgba(0,0,0,.5);margin:2px 0 0}
+ .hero .stage>.city-card{width:106vw;margin-inline-start:-3vw;top:calc(100svh - 106vw * 7 / 8 - 6px)}
+ .city-card img.poster{filter:none}
+ .strip{padding-top:30px}
+}
 @media (max-width:560px){.badge{height:52px}.badge b{font-size:21px}}
 
 @media (max-width:900px){

@@ -153,7 +153,7 @@
       var items = [].slice.call(hero.querySelectorAll('.mi')), N = items.length;
       ScrollTrigger.create({ trigger: stage, start: 'top top', end: 'bottom bottom', onUpdate: function (s) {
         var p = s.progress, t = Math.min(1, p / 0.82) * (N - 1);
-        items.forEach(function (el, k) { var d = Math.abs(t - k); el.style.opacity = Math.max(0, Math.min(1, 1.6 - d * 2.2)).toFixed(3); });
+        items.forEach(function (el, k) { var d = Math.abs(t - k), o = Math.max(0, Math.min(1, 1 - (d - 0.22) * 4)); el.style.opacity = o.toFixed(3); el.style.transform = 'translate3d(0,' + ((k - t) * 46).toFixed(1) + 'px,0)'; el.style.pointerEvents = o > 0.6 ? 'auto' : 'none'; });
         spin = p * Math.PI * 2; push();
       } });
     } else {
