@@ -536,6 +536,44 @@ html[lang=he] .dl-hero h1{line-height:1.08;letter-spacing:0}
  .manifesto{min-height:88svh;display:flex;align-items:center;padding:20px 0}
  .manifesto p{font-size:32px;line-height:1.2;text-align:center;margin:0 auto}
 }
+
+/* ================= mobile v6, after stryds.com =================
+   1) a held stage: the city stays on screen while the words change above it (CSS sticky, only opacity animates)
+   2) big words, few of them, key word in colour and the rest grey
+   3) stacked cards with large headlines, no motion on them (nothing to rattle)
+   4) a full-colour ending */
+.mseq{display:none}
+@media (max-width:600px){
+ .hero{display:flex;flex-direction:column;height:auto;padding:0;min-height:0}
+ .hero .stage{order:1}.hero .cta{order:2}
+ .hero .intro{display:none}
+ .hero .stage{position:relative;height:420svh;margin:0 -18px;width:calc(100% + 36px)}
+ .hero .stage>.city-card,.hero .stage>.mseq{position:sticky;top:0}
+ .hero .stage>.mseq{display:block;height:100svh;margin-bottom:-100svh;z-index:7;pointer-events:none}
+ .hero .stage>.city-card{top:calc(100svh - 100vw * 7 / 8 - 40px);aspect-ratio:8/7;z-index:5}
+ .mi{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:calc(56px + env(safe-area-inset-top)) 22px 0;text-align:center;opacity:0}
+ .mi0{opacity:1}
+ .mi0 img{width:min(80%,320px);height:auto;margin:6svh auto 14px}
+ .mi0 b{font-size:21px;font-weight:600;color:rgba(0,0,0,.45);letter-spacing:-.01em}
+ .mi p{margin:9svh 0 0;font-size:40px;line-height:1.08;font-weight:800;letter-spacing:-.035em;color:rgba(0,0,0,.22)}
+ html[lang=he] .mi p{font-weight:700;letter-spacing:0;line-height:1.15}
+ .mi em{font-style:normal}
+ .k-cafe{color:var(--orange)}.k-house{color:var(--violet)}.k-city{color:var(--green)}
+ .hero .cta{padding:26px 0 30px}
+ .hero .cta .lead{font-size:19px;font-weight:600;line-height:1.4}
+ .manifesto{display:none}
+ /* cards */
+ .ch,.ch.on{min-height:74svh;padding:26px 22px 18px;border-radius:30px;top:calc(14px + var(--i,0) * 10px)}
+ .ch .chico{width:38px;height:38px}
+ .ch h2{font-size:34px;line-height:1.02;letter-spacing:-.03em;margin-top:10px}
+ html[lang=he] .ch h2{line-height:1.12;letter-spacing:0}
+ .ch p{font-size:16.5px;line-height:1.45;color:rgba(0,0,0,.45);font-weight:500}
+ /* ending in colour */
+ .final{background:var(--green);color:#fff;border-radius:30px;min-height:70svh;display:flex;flex-direction:column;justify-content:center;padding:40px 18px 0}
+ .final h2{font-size:38px;line-height:1.05;color:#fff}
+ .final .andr{color:rgba(255,255,255,.8)}
+ .final .badge.apple{border-color:#fff}
+}
 @media (max-width:560px){.badge{height:52px}.badge b{font-size:21px}}
 
 @media (max-width:900px){

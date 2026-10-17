@@ -112,6 +112,7 @@
 
   /* ---------- the page colour drifts from section to section ---------- */
   (function () {
+    if (matchMedia('(max-width:600px)').matches) return;
     var map = [['.hero', '#FFFFFF'], ['.manifesto', '#FFF3CF'], ['.strip', '#E4F4E8'], ['.story', '#FFF6EC'],
                ['.inside', '#FFFFFF'], ['.pair', '#F1EAFF'], ['.what', '#FFFFFF'], ['.know', '#E6F0FF'], ['main > section:nth-last-of-type(2)', '#FFF3CF'], ['.final', '#E4F4E8']];
     var body = document.body;
@@ -148,11 +149,13 @@
     var small = matchMedia('(max-width:900px)').matches;
     var copy = hero.querySelectorAll('.intro, .cta'); // wrappers; the entrance animates their children, not them
     if (matchMedia('(max-width:600px)').matches) {
-      // phones: the entry screen drifts away as you start, then the island turns a full circle while it crosses the screen
-      var intro = hero.querySelector('.intro');
-      gsap.to(intro, { opacity: 0, scale: 0.94, y: -40, ease: 'none', scrollTrigger: { trigger: intro, start: 'top top', end: 'bottom 35%', scrub: 0.4 } });
-      gsap.fromTo(stage, { scale: 0.86 }, { scale: 1.04, ease: 'none', scrollTrigger: { trigger: stage, start: 'top bottom', end: 'bottom top', scrub: 0.5,
-        onUpdate: function (s) { spin = s.progress * Math.PI * 2; push(); } } });
+      // phones: the stage is held by CSS sticky; the scroll only swaps the words (opacity) and turns the island inside its own canvas
+      var items = [].slice.call(hero.querySelectorAll('.mi')), N = items.length;
+      ScrollTrigger.create({ trigger: stage, start: 'top top', end: 'bottom bottom', onUpdate: function (s) {
+        var p = s.progress, t = Math.min(1, p / 0.82) * (N - 1);
+        items.forEach(function (el, k) { var d = Math.abs(t - k); el.style.opacity = Math.max(0, Math.min(1, 1.6 - d * 2.2)).toFixed(3); });
+        spin = p * Math.PI * 2; push();
+      } });
     } else {
       var tl = gsap.timeline({ scrollTrigger: { trigger: hero, start: 'top top', end: small ? '+=70%' : '+=110%', pin: true, scrub: 0.6,
         onUpdate: function (s) { spin = s.progress * Math.PI * 2; push(); } } });
@@ -230,7 +233,6 @@
     // phones get a plain sequence of pictures + words (see CSS): just let each picture settle in once
     chs.forEach(function (c) {
       var im = c.querySelector('.chimg');
-      if (im) gsap.fromTo(im, { scale: 0.92, rotation: -2 }, { scale: 1, rotation: 0, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: c, start: 'top 88%', once: true } });
     });
     return;
   }
