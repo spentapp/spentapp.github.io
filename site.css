@@ -412,6 +412,25 @@ html[lang=he] .dl-hero h1{line-height:1.08;letter-spacing:0}
  .ch h2{font-size:25px}
  .what-grid{grid-template-columns:1fr}
 }
+
+/* phones, take 2: chapters are short text blocks; the worlds are one small strip you can swipe (native scroll, nothing shakes) */
+.wrow{display:none}
+@media (max-width:900px){
+ .ch,.ch.on{padding:0 0 26px;gap:6px}
+ .ch .chico{display:block;width:44px;height:44px}
+ .ch h2{font-size:22px}
+ .ch p{font-size:16px}
+ .ch .wnames{display:none}
+ .wrow{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:10px -20px 0;padding:0 20px 6px;scrollbar-width:none}
+ .wrow::-webkit-scrollbar{display:none}
+ .wrow figure{flex:0 0 46%;margin:0;scroll-snap-align:start;text-align:center}
+ .wrow img{width:100%;height:auto;display:block}
+ .wrow figcaption{font-size:14px;font-weight:600;margin-top:-6px}
+ /* header: logo and language on one quiet line */
+ header.top{justify-content:space-between;align-items:center;padding:12px 0 0}
+ .brand img.wm{height:40px}
+ .lang{border-bottom:0;font-size:14px;color:var(--ink2);padding:12px 2px}
+}
 @media (max-width:560px){.badge{height:52px}.badge b{font-size:21px}}
 
 @media (max-width:900px){
