@@ -7,6 +7,7 @@
   if (!window.gsap || !window.ScrollTrigger) { root.classList.remove('gs'); return; }
   window.__gsOK = true;
   gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.config({ ignoreMobileResize: true }); // the phone address bar must not re-measure every pin
   var EXPO = 'expo.out', SPRING = 'back.out(1.7)';
   var mq = gsap.matchMedia();
   var rtl = root.dir === 'rtl';
@@ -316,6 +317,13 @@
     var centers = chs.map(function (c) { var r = c.getBoundingClientRect(); return r.top + r.height / 2; });
     if (line <= centers[0]) t = 0; else if (line >= centers[n - 1]) t = n - 1;
     else { for (var i = 0; i < n - 1; i++) { if (line >= centers[i] && line < centers[i + 1]) { t = i + (line - centers[i]) / (centers[i + 1] - centers[i]); break; } } }
+    if (small) {
+      // phones: no per-scroll motion (iOS momentum scrolling made the track shake); one clean slide per chapter
+      var k = Math.round(t);
+      if (k !== chIdx) gsap.to(state, { f: MAPW[k], duration: 0.75, ease: 'power3.inOut', onUpdate: render, overwrite: true });
+      activate(k);
+      return;
+    }
     var i0 = Math.floor(t), fr = t - i0, a = MAPW[i0], b = MAPW[Math.min(i0 + 1, n - 1)];
     toF(a + (b - a) * smooth((fr - 0.3) / 0.4));      // the city rests while its chapter is read, then glides to the next
     activate(Math.round(t));

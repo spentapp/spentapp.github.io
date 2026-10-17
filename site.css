@@ -276,7 +276,6 @@ nav.main a:hover{background:none;color:var(--green)}
 nav.main a.go{order:9;margin-inline-start:4px;padding:11px 18px;border-radius:999px;background:var(--ink);color:#fff}
 nav.main a.go:hover{color:#fff}
 html.scrolled nav.main a:not(.go){opacity:0;transform:translateY(-8px);pointer-events:none}
-.hero .stage{pointer-events:none}
 .lang{position:fixed;bottom:22px;inset-inline-end:28px;z-index:60;font-size:14px;font-weight:600;color:var(--ink2);text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:1px}
 .lang:hover{color:var(--green)}
 @media (max-width:900px){
@@ -313,6 +312,22 @@ html.scrolled nav.main a:not(.go){opacity:0;transform:translateY(-8px);pointer-e
 .fit li{padding-inline-start:28px;position:relative;line-height:1.5}
 .fit li::before{content:'';position:absolute;inset-inline-start:0;top:.45em;width:14px;height:14px;border-radius:50%;background:var(--green)}
 @media (max-width:900px){.what-grid{grid-template-columns:1fr}}
+
+/* touch: the live cities never swallow a swipe. A transparent layer sits over every iframe so the page scrolls. */
+.city-card::after,.xsl::after{content:'';position:absolute;inset:0;z-index:4;touch-action:pan-y}
+.hero .stage{pointer-events:auto}
+.hero>div:first-child{position:relative;z-index:6}
+@media (max-width:900px){
+ /* the sticky world card on phones: a band of page colour above and a soft fade below, so chapter text never peeks around it */
+ .xcard{box-shadow:0 -80px 0 0 #FFF6EC,0 26px 22px 2px #FFF6EC}
+ .xtrack{will-change:transform;backface-visibility:hidden}
+ /* screens: a calm 2 by 2 grid instead of a sideways strip */
+ .phones{display:grid;grid-template-columns:1fr 1fr;overflow:visible;margin:0;padding:0;gap:18px 14px}
+ .ph{flex:none}
+ .ph:nth-child(even){margin-top:34px}
+ .ph figcaption b{font-size:15.5px}
+ .ph figcaption span{font-size:13.5px}
+}
 @media (max-width:560px){.badge{height:52px}.badge b{font-size:21px}}
 
 @media (max-width:900px){
