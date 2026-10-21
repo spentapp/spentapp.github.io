@@ -15,7 +15,78 @@
     "communityMerchantLearning": true
   },
 
-  "announcement": null,
+  "announcement": {
+    "id": "ios27_wallet_shortcut_update_app_v1",
+    "enabled": true,
+    "startsAt": null,
+    "endsAt": null,
+    "title": {
+      "he": "קיצור חדש ל־iOS 27",
+      "en": "New shortcut for iOS 27"
+    },
+    "body": {
+      "he": "ודאו ש־SPENT מעודכן, ואז: פרופיל ← קליטה אוטומטית ← הוספת הקיצור מחדש",
+      "en": "Make sure SPENT is up to date, then: Profile → Automatic Capture → add the shortcut again."
+    },
+    "action": null
+  },
+
+  "announcements": [
+    {
+      "id": "ios27_wallet_shortcut_v1",
+      "format": "modal",
+      "enabled": true,
+      "priority": 100,
+      "startsAt": null,
+      "endsAt": null,
+      "minAppVersion": null,
+      "maxAppVersion": null,
+      "minOSVersion": "27.0",
+      "maxOSVersion": null,
+      "onlyIfOnboardedBefore": "2026-10-21T00:00:00Z",
+      "illustration": "walletShortcut",
+      "eyebrow": {
+        "he": "חדש ב־SPENT · למשתמשי iOS 27 ומעלה בלבד",
+        "en": "New in SPENT · iOS 27 or later only"
+      },
+      "title": {
+        "he": "הקיצור שלכם השתדרג!",
+        "en": "Your shortcut just got smarter!"
+      },
+      "body": {
+        "he": "הקיצור החדש יודע לזהות גם התראות על רכישות שמגיעות ל־Apple Wallet, אפילו כשלא שילמתם באמצעות Apple Pay.",
+        "en": "The new shortcut can capture transaction alerts from Apple Wallet, even when you didn't pay using Apple Pay."
+      },
+      "steps": [
+        {
+          "he": "כבר עדכנתם את SPENT לגרסה האחרונה.",
+          "en": "You're already on the latest SPENT.",
+          "done": true
+        },
+        {
+          "he": "היכנסו לפרופיל ← קליטה אוטומטית והוסיפו את הקיצור מחדש.",
+          "en": "Open Profile → Automatic Capture and add the shortcut again."
+        },
+        {
+          "he": "אחרי שהקיצור החדש פועל, אפשר לכבות את האוטומציה הישנה באפליקציית קיצורים.",
+          "en": "Once the new automation is working, you can disable the old one in Shortcuts."
+        }
+      ],
+      "footnote": {
+        "he": "הקליטה תלויה בהתראות העסקאות שמגיעות ל־Wallet.",
+        "en": "Automatic capture depends on supported transaction notifications appearing in Wallet."
+      },
+      "primaryAction": "openShortcutSetup",
+      "primaryLabel": {
+        "he": "לעדכון הקיצור",
+        "en": "Update Shortcut"
+      },
+      "secondaryLabel": {
+        "he": "אולי אחר כך",
+        "en": "Maybe Later"
+      }
+    }
+  ],
 
   "copy": {},
 
