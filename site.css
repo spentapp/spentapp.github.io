@@ -450,7 +450,8 @@ html[lang=he] .dl-hero h1{line-height:1.08;letter-spacing:0}
  .hero h1{font-size:39px;line-height:1.02;letter-spacing:-.04em;max-width:none;margin:0 auto 14px}
  html[lang=he] .hero h1{font-size:38px;line-height:1.1;max-width:none}
  .hero .lead{font-size:16px;line-height:1.55;max-width:21em;margin:0 auto 20px}
- .badges .badge.play{display:none}
+ html:not(.android) .badges .badge.play{display:none}
+ html.android .badges .badge.apple{display:none}
  .badges{justify-content:center}
  .badge{height:50px}
  .andr{display:block;margin:12px 0 0;font-size:13px;color:var(--ink3);text-align:center}

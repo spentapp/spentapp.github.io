@@ -1,3 +1,4 @@
+if (/Android/i.test(navigator.userAgent)) document.documentElement.classList.add('android');
 /* SPENT site motion. GSAP + ScrollTrigger. Content is visible by default; this file only adds motion.
    Thesis: one authored moment (the pinned city that changes world with each chapter),
    plus a hero entrance and a few ambient details that stop when offscreen. */

@@ -25,6 +25,11 @@
     document.getElementById('note').hidden = true;
     return;
   }
+  if (/Android/i.test(navigator.userAgent)) {
+    const dl = document.getElementById('download');
+    dl.href = 'https://play.google.com/store/apps/details?id=com.biniwis.spent';
+    dl.textContent = english ? 'Get SPENT on Google Play' : 'להורדה ב־Google Play';
+  }
   const open = document.getElementById('open');
   open.href = 'spentapp://referral?ref=' + code;
   open.hidden = false;
