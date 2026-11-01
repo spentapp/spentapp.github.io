@@ -1,7 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 1,
-
+  "revision": 2,
   "features": {
     "sharedE2EEEnabled": true,
     "sharedCreateJoinEnabled": true,
@@ -15,7 +14,6 @@
     "excelExport": true,
     "communityMerchantLearning": false
   },
-
   "announcement": {
     "id": "ios27_wallet_shortcut_update_app_v1",
     "enabled": true,
@@ -31,7 +29,6 @@
     },
     "action": null
   },
-
   "announcements": [
     {
       "id": "ios27_wallet_shortcut_v1",
@@ -86,11 +83,62 @@
         "he": "אולי אחר כך",
         "en": "Maybe Later"
       }
+    },
+    {
+      "id": "notification_capture_shortcut_launch_v2",
+      "format": "modal",
+      "enabled": true,
+      "priority": 110,
+      "startsAt": "2026-11-01T07:06:07Z",
+      "endsAt": "2026-12-01T07:06:07Z",
+      "minAppVersion": "1.65",
+      "maxAppVersion": "1.65",
+      "minOSVersion": "27.0",
+      "maxOSVersion": null,
+      "onlyIfOnboardedBefore": null,
+      "illustration": "walletShortcut",
+      "eyebrow": {
+        "he": "חדש ב־SPENT",
+        "en": "New in SPENT"
+      },
+      "title": {
+        "he": "קיצור חדש. יותר תשלומים נקלטים.",
+        "en": "New shortcut. More payments captured."
+      },
+      "body": {
+        "he": "הקיצור החדש קולט גם העברות ב־bit וב־PayBox, וגם התראות תשלום מ־Wallet ומאפליקציות אשראי נתמכות כמו כאל, max וישראכרט. מחברים את האפליקציות שלכם, ו־SPENT קולטת את פרטי התשלום מההתראות.",
+        "en": "The new shortcut captures bit and PayBox transfers, plus payment notifications from Wallet and supported card apps such as Cal, max and Isracard. Connect your apps and SPENT captures payment details from their notifications."
+      },
+      "steps": [
+        {
+          "he": "היכנסו לפרופיל ← קליטה אוטומטית והוסיפו את הקיצור החדש.",
+          "en": "Open Profile → Automatic Capture and add the new shortcut."
+        },
+        {
+          "he": "הפעילו את אוטומציית ההתראות, כולל ארנק והאפליקציות שלכם.",
+          "en": "Turn on the notification automation, including Wallet and your apps."
+        },
+        {
+          "he": "אחרי שהחדש פועל, כבו את האוטומציות הישנות של SPENT בקיצורים.",
+          "en": "Once the new one is working, turn off your old SPENT automations in Shortcuts."
+        }
+      ],
+      "footnote": {
+        "he": "ל־iOS 27 ומעלה. הקליטה תלויה בהתראות תשלום נתמכות שמתקבלות במכשיר.",
+        "en": "For iOS 27 or later. Capture depends on supported payment notifications arriving on your device."
+      },
+      "primaryAction": "openShortcutSetup",
+      "primaryLabel": {
+        "he": "להתקנת הקיצור החדש",
+        "en": "Get the new shortcut"
+      },
+      "secondaryLabel": {
+        "he": "אחר כך",
+        "en": "Later"
+      }
     }
   ],
-
   "copy": {},
-
   "captureGuide": {
     "mode": "native",
     "forceVariant": null,
@@ -99,72 +147,302 @@
     "fastSetupEnabled": true,
     "shortcutURL": "https://www.icloud.com/shortcuts/72aa49c6fe0449fd99703e8d4f2a1853"
   },
-
   "notifications": {
     "weeklyDigest": null,
     "monthlyRecap": null,
     "cityNarrativeEnabled": true,
     "captureHealthCheckEnabled": true
   },
-
   "merchantOverrides": [
-    { "match": "wolt", "mode": "exact", "category": "food" },
-    { "match": "וולט", "mode": "exact", "category": "food" },
-    { "match": "10bis", "mode": "exact", "category": "food" },
-    { "match": "תן ביס", "mode": "exact", "category": "food" },
-    { "match": "tabit", "mode": "exact", "category": "food" },
-    { "match": "טאביט", "mode": "exact", "category": "food" },
-    { "match": "shufersal", "mode": "exact", "category": "food" },
-    { "match": "שופרסל", "mode": "exact", "category": "food" },
-    { "match": "שופרסל דיל", "mode": "exact", "category": "food" },
-    { "match": "שופרסל שלי", "mode": "exact", "category": "food" },
-    { "match": "שופרסל אקספרס", "mode": "exact", "category": "food" },
-    { "match": "יש חסד", "mode": "exact", "category": "food" },
-    { "match": "יש בשכונה", "mode": "exact", "category": "food" },
-    { "match": "rami levy", "mode": "exact", "category": "food" },
-    { "match": "רמי לוי", "mode": "exact", "category": "food" },
-    { "match": "am:pm", "mode": "exact", "category": "food" },
-    { "match": "victory", "mode": "exact", "category": "food" },
-    { "match": "ויקטורי", "mode": "exact", "category": "food" },
-    { "match": "carrefour", "mode": "exact", "category": "food" },
-    { "match": "קרפור", "mode": "exact", "category": "food" },
-    { "match": "יוחננוף", "mode": "exact", "category": "food" },
-    { "match": "yohanof", "mode": "exact", "category": "food" },
-    { "match": "yohananof", "mode": "exact", "category": "food" },
-    { "match": "טיב טעם", "mode": "exact", "category": "food" },
-    { "match": "tiv taam", "mode": "exact", "category": "food" },
-    { "match": "אושר עד", "mode": "exact", "category": "food" },
-    { "match": "osher ad", "mode": "exact", "category": "food" },
-    { "match": "חצי חינם", "mode": "exact", "category": "food" },
-    { "match": "hazi hinam", "mode": "exact", "category": "food" },
-    { "match": "מגה בעיר", "mode": "exact", "category": "food" },
-    { "match": "aroma", "mode": "exact", "category": "food" },
-    { "match": "ארומה", "mode": "exact", "category": "food" },
-    { "match": "arcaffe", "mode": "exact", "category": "food" },
-    { "match": "ארקפה", "mode": "exact", "category": "food" },
-    { "match": "landwer", "mode": "exact", "category": "food" },
-    { "match": "לנדוור", "mode": "exact", "category": "food" },
-    { "match": "קפה גרג", "mode": "exact", "category": "food" },
-    { "match": "רולדין", "mode": "exact", "category": "food" },
-    { "match": "roladin", "mode": "exact", "category": "food" },
-    { "match": "גולדה", "mode": "exact", "category": "food" },
-    { "match": "golda", "mode": "exact", "category": "food" },
-    { "match": "gett", "mode": "exact", "category": "transport" },
-    { "match": "גט", "mode": "exact", "category": "transport" },
-    { "match": "uber", "mode": "exact", "category": "transport" },
-    { "match": "אובר", "mode": "exact", "category": "transport" },
-    { "match": "pango", "mode": "exact", "category": "transport" },
-    { "match": "פנגו", "mode": "exact", "category": "transport" },
-    { "match": "cellopark", "mode": "exact", "category": "transport" },
-    { "match": "סלופארק", "mode": "exact", "category": "transport" },
-    { "match": "rav kav", "mode": "exact", "category": "transport" },
-    { "match": "רב קו", "mode": "exact", "category": "transport" },
-    { "match": "super-pharm", "mode": "exact", "category": "health" },
-    { "match": "super pharm", "mode": "exact", "category": "health" },
-    { "match": "סופר-פארם", "mode": "exact", "category": "health" },
-    { "match": "סופר פארם", "mode": "exact", "category": "health" },
-    { "match": "be פארם", "mode": "exact", "category": "health" },
-    { "match": "zara", "mode": "exact", "category": "shopping" },
-    { "match": "זארה", "mode": "exact", "category": "shopping" }
+    {
+      "match": "wolt",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "וולט",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "10bis",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "תן ביס",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "tabit",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "טאביט",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "shufersal",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "שופרסל",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "שופרסל דיל",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "שופרסל שלי",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "שופרסל אקספרס",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "יש חסד",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "יש בשכונה",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "rami levy",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "רמי לוי",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "am:pm",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "victory",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "ויקטורי",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "carrefour",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "קרפור",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "יוחננוף",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "yohanof",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "yohananof",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "טיב טעם",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "tiv taam",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "אושר עד",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "osher ad",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "חצי חינם",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "hazi hinam",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "מגה בעיר",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "aroma",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "ארומה",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "arcaffe",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "ארקפה",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "landwer",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "לנדוור",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "קפה גרג",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "רולדין",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "roladin",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "גולדה",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "golda",
+      "mode": "exact",
+      "category": "food"
+    },
+    {
+      "match": "gett",
+      "mode": "exact",
+      "category": "transport"
+    },
+    {
+      "match": "גט",
+      "mode": "exact",
+      "category": "transport"
+    },
+    {
+      "match": "uber",
+      "mode": "exact",
+      "category": "transport"
+    },
+    {
+      "match": "אובר",
+      "mode": "exact",
+      "category": "transport"
+    },
+    {
+      "match": "pango",
+      "mode": "exact",
+      "category": "transport"
+    },
+    {
+      "match": "פנגו",
+      "mode": "exact",
+      "category": "transport"
+    },
+    {
+      "match": "cellopark",
+      "mode": "exact",
+      "category": "transport"
+    },
+    {
+      "match": "סלופארק",
+      "mode": "exact",
+      "category": "transport"
+    },
+    {
+      "match": "rav kav",
+      "mode": "exact",
+      "category": "transport"
+    },
+    {
+      "match": "רב קו",
+      "mode": "exact",
+      "category": "transport"
+    },
+    {
+      "match": "super-pharm",
+      "mode": "exact",
+      "category": "health"
+    },
+    {
+      "match": "super pharm",
+      "mode": "exact",
+      "category": "health"
+    },
+    {
+      "match": "סופר-פארם",
+      "mode": "exact",
+      "category": "health"
+    },
+    {
+      "match": "סופר פארם",
+      "mode": "exact",
+      "category": "health"
+    },
+    {
+      "match": "be פארם",
+      "mode": "exact",
+      "category": "health"
+    },
+    {
+      "match": "zara",
+      "mode": "exact",
+      "category": "shopping"
+    },
+    {
+      "match": "זארה",
+      "mode": "exact",
+      "category": "shopping"
+    }
   ]
 }
