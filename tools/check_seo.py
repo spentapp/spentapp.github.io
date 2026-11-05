@@ -32,7 +32,8 @@ for url in locations:
  if path!='/privacy.html':
   assert any('6809588178' in a.get('href','') for a in p.find('a')),f'App Store link: {url}'
   alternates=p.find('link',rel='alternate')
-  assert {a.get('hreflang') for a in alternates}=={'en','he','x-default'},f'Alternates: {url}'
+  # Language-only pages (e.g. Hebrew-only guides) have no alternates; when present they must be complete.
+  if alternates: assert {a.get('hreflang') for a in alternates}=={'en','he','x-default'},f'Alternates: {url}'
   for a in alternates:
    other=ROOT/(urlparse(a['href']).path.lstrip('/')+'index.html');otherp=Page(other.read_text())
    assert any(x.get('href')==url for x in otherp.find('link',rel='alternate')),f'Nonreciprocal hreflang {url}'
