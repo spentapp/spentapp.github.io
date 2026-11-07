@@ -192,7 +192,7 @@
             <span>🏙️</span> SPENT
         </div>
         <h1 id="title">מדיניות פרטיות</h1>
-        <p class="subtitle" id="subtitle">עדכון אחרון: 12 באוקטובר 2026 | Last updated: October 12, 2026</p>
+        <p class="subtitle" id="subtitle">עדכון אחרון: 7 בנובמבר 2026 | Last updated: November 7, 2026</p>
         
         <div class="lang-switch">
             <button class="lang-btn active" onclick="setLang('he')">עברית</button>
@@ -220,6 +220,10 @@
                 <li>האפליקציה אינה כוללת ספריות צד שלישי למעקב פרסומי (ללא Facebook SDK, Google AdMob וכיו״ב).</li>
                 <li>איננו עוקבים אחר זהותך או פעילותך באפליקציות ואתרים אחרים, ומזהה המעקב של Apple (IDFA) אינו פעיל ואינו מבוקש.</li>
             </ul>
+        </section>
+        <section>
+            <h2>2א. מדידת לחיצות באתר</h2>
+            <p>באתר SPENT אנו סופרים לחיצות על קישורי ההורדה ל־App Store ול־Google Play כדי להבין כמה אנשים עוברים לחנויות. ברשומות המדידה נשמרים סוג החנות, נתיב הדף, תאריך ושעת הלחיצה ותגיות קמפיין כלליות (אם קיימות בכתובת). בטבלת המדידה לא נשמרות כתובות IP, עוגיות, מזהי משתמש או פרטי הוצאות. האירועים נשלחים ל־Supabase. ספירת לחיצות אינה מעידה על מספר ההתקנות בפועל.</p>
         </section>
 
         <section>
@@ -315,6 +319,10 @@
                 <li>Apple's Identifier for Advertisers (IDFA) is neither requested nor used.</li>
             </ul>
         </section>
+        <section>
+            <h2>2A. Website app store click counts</h2>
+            <p>The SPENT website counts clicks on links to the App Store and Google Play to measure visits to the app listings. Each record contains the destination store, website page path, click date and time, and general campaign tags if present in the URL. The click table does not store IP addresses, cookies, user identifiers, or expense details. Events are sent to Supabase. Store-link clicks are not confirmed installs.</p>
+        </section>
 
         <section>
             <h2>3. Transaction Ingest via Shortcuts</h2>
@@ -406,7 +414,7 @@
             document.documentElement.dir = 'ltr';
             document.documentElement.lang = 'en';
             title.textContent = 'Privacy Policy';
-            document.getElementById('subtitle').textContent = 'Last updated: October 12, 2026';
+            document.getElementById('subtitle').textContent = 'Last updated: November 7, 2026';
             btns[0].classList.remove('active');
             btns[1].classList.add('active');
         } else {
