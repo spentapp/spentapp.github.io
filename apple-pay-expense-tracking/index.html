@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to track Apple Pay spending automatically on iPhone | SPENT</title>
+<meta name="description" content="Track Apple Pay purchases automatically on iPhone without linking your bank: set up a Shortcuts automation for SPENT, see what it captures and what it misses.">
+<link rel="canonical" href="https://spentapp.github.io/apple-pay-expense-tracking/">
+<link rel="alternate" hreflang="en" href="https://spentapp.github.io/apple-pay-expense-tracking/"><link rel="alternate" hreflang="he" href="https://spentapp.github.io/he/automatic-expense-tracking/"><link rel="alternate" hreflang="x-default" href="https://spentapp.github.io/apple-pay-expense-tracking/">
+<meta name="apple-itunes-app" content="app-id=6809588178"><meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="SPENT">
+<meta property="og:title" content="How to track Apple Pay spending automatically on iPhone | SPENT">
+<meta property="og:description" content="Track Apple Pay purchases automatically on iPhone without linking your bank: set up a Shortcuts automation for SPENT, see what it captures and what it misses.">
+<meta property="og:url" content="https://spentapp.github.io/apple-pay-expense-tracking/">
+<meta property="og:image" content="https://spentapp.github.io/og-invite.jpg"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/site.css?v=ae2cdfae"><link rel="stylesheet" href="/guides.css?v=910bda8f">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://spentapp.github.io/apple-pay-expense-tracking/#page","url":"https://spentapp.github.io/apple-pay-expense-tracking/","name":"How to track Apple Pay spending automatically on iPhone","description":"Track Apple Pay purchases automatically on iPhone without linking your bank: set up a Shortcuts automation for SPENT, see what it captures and what it misses.","inLanguage":"en","datePublished":"2026-11-26","dateModified":"2026-11-26","isPartOf":{"@id":"https://spentapp.github.io/#site"},"about":{"@id":"https://spentapp.github.io/#app"},"author":{"@id":"https://spentapp.github.io/#author"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SPENT","item":"https://spentapp.github.io/"},{"@type":"ListItem","position":2,"name":"Track Apple Pay spending automatically","item":"https://spentapp.github.io/apple-pay-expense-tracking/"}]},{"@type":"Person","@id":"https://spentapp.github.io/#author","name":"Binyamin Wisemon","alternateName":"בנימין ויסמן","jobTitle":"Developer of SPENT"},{"@type":"FAQPage","@id":"https://spentapp.github.io/apple-pay-expense-tracking/#faq","inLanguage":"en","mainEntity":[{"@type":"Question","name":"Can I track Apple Pay spending without connecting my bank?","acceptedAnswer":{"@type":"Answer","text":"Yes. A Shortcuts automation on your iPhone passes the amount and merchant of each supported Apple Pay purchase to SPENT. SPENT never asks for bank login details and does not read your bank account."}},{"@type":"Question","name":"Which iOS version do I need?","acceptedAnswer":{"@type":"Answer","text":"The guided setup in SPENT needs iOS 27 or later. On earlier versions SPENT offers a manual setup option, but transaction details may be incomplete, so you may need to fill some in yourself."}},{"@type":"Question","name":"Will every purchase be captured?","acceptedAnswer":{"@type":"Answer","text":"No. Only Apple Pay purchases that produce a transaction notification in Wallet can be captured, and that depends on your card and bank. Cash, bank transfers and other payments need to be added by hand."}},{"@type":"Question","name":"Is SPENT free?","acceptedAnswer":{"@type":"Answer","text":"Yes, SPENT is free to download on the App Store and Google Play."}}]}]}</script><script src="/js/store-clicks.js?v=2" defer></script>
+</head>
+<body><div class="wrap">
+<header class="guide-header"><a href="/" aria-label="SPENT"><img src="/logo.png" alt="SPENT" width="105" height="60"></a><nav aria-label="Navigation"><a href="/">Home</a><a href="/expense-tracker-iphone/">iPhone guide</a><a href="/he/automatic-expense-tracking/" lang="he" hreflang="he">עברית</a></nav></header>
+<main class="guide">
+<p class="guide-meta">By <a href="#author">Binyamin Wisemon</a>, developer of SPENT · <time datetime="2026-11-26">November 26, 2026</time></p>
+<h1>How to track Apple Pay spending automatically on iPhone</h1>
+<p class="lead">You can track Apple Pay spending automatically on iPhone without linking a bank account. A personal automation in the Shortcuts app sends the amount and merchant of each supported Apple Pay purchase to an expense tracker such as SPENT, which adds the expense for you.</p>
+<ul aria-label="On this page">
+<li><a href="#how-it-works">How automatic Apple Pay tracking works</a></li>
+<li><a href="#setup">Set it up in SPENT, step by step</a></li>
+<li><a href="#limits">What it captures and what it misses</a></li>
+<li><a href="#check">Check that it works</a></li>
+</ul>
+<a class="btn" href="https://apps.apple.com/app/id6809588178">Download on the App Store</a> <a class="btn" href="https://play.google.com/store/apps/details?id=com.biniwis.spent">Get it on Google Play</a>
+
+<section id="how-it-works"><h2>How automatic Apple Pay tracking works</h2>
+<p>When you pay with Apple Pay, Wallet can show a transaction notification for that card. The Shortcuts app has a Wallet trigger that runs an automation at that moment and hands it the amount and the merchant name. SPENT adds a Shortcuts action called <strong>Record Apple Pay Transaction</strong>, which turns those two values into an expense in your history and in your city.</p>
+<p>No bank connection is involved. SPENT does not ask for bank login details, does not read your bank account and does not get access to your card. It only receives what the automation on your own iPhone passes to it.</p></section>
+
+<section id="requirements"><h2>What you need</h2>
+<ul>
+<li><strong>iOS 27 or later</strong> for the guided setup inside SPENT. On earlier versions there is a manual setup option at the bottom of the capture screen, but transaction details may be incomplete.</li>
+<li>A card in Apple Wallet whose purchases show a transaction notification. This depends on your card and bank.</li>
+<li>SPENT, free on the <a href="https://apps.apple.com/app/id6809588178">App Store</a>.</li>
+</ul></section>
+
+<section id="setup"><h2>Set it up in SPENT, step by step</h2>
+<p>The setup takes a few minutes and is done once. SPENT shows the same steps with screenshots under <strong>Profile → Automatic Capture</strong>.</p>
+<ol>
+<li>In SPENT, open <strong>Profile → Automatic Capture</strong> and start the setup guide.</li>
+<li>Open the <strong>Shortcuts</strong> app, go to <strong>Automations</strong> and tap <strong>+</strong>.</li>
+<li>Scroll to the <strong>Wallet</strong> trigger, select the cards and categories you want to track, and tap <strong>Next</strong>.</li>
+<li>Add an action: type <strong>Spe</strong> and select <strong>Record Apple Pay Transaction</strong>.</li>
+<li>In the amount field choose <strong>Shortcut Input</strong>, tap it again and choose <strong>Amount</strong>. In the next field choose <strong>Shortcut Input</strong> again and choose <strong>Merchant</strong>.</li>
+<li>Tap the run button once to test. A SPENT window appears; tap <strong>Done</strong>. If iOS asks for permission to run SPENT, allow it.</li>
+<li>Save the automation, open it from the Automations list and set it to <strong>Run Immediately</strong>. The default, Run After Confirmation, will not capture purchases on its own. You can turn off <strong>Notify When Run</strong> so you are not notified on every payment.</li>
+</ol>
+<figure class="guide-shot"><img src="/assets/screen-applepay.webp" width="560" height="1019" loading="lazy" alt="SPENT screen for setting up automatic Apple Pay capture"><figcaption>The capture setup screen in SPENT (app shown in Hebrew). The automation itself is created in the Shortcuts app.</figcaption></figure>
+<p>Prefer to watch first? This 46-second demo shows the flow in the app (Hebrew interface):</p>
+<video controls playsinline preload="metadata" width="1280" height="720" style="display:block;width:100%;height:auto;border-radius:16px" aria-label="SPENT automatic Apple Pay capture demo">
+<source src="/assets/spent-iphone-auto-capture.mp4" type="video/mp4">
+<a href="/assets/spent-iphone-auto-capture.mp4">Download the demo</a>
+</video></section>
+
+<section id="limits"><h2>What it captures and what it misses</h2>
+<p>Automatic capture records supported Apple Pay purchases on your iPhone. It is not a full bank sync, so plan to add some expenses by hand:</p>
+<ul>
+<li><strong>Cash and bank transfers:</strong> there is no Apple Pay event to capture.</li>
+<li><strong>Payments without a Wallet notification:</strong> for example a physical card swipe, or a card or bank that does not send transaction notifications to Wallet.</li>
+<li><strong>Missing details:</strong> if the amount does not arrive, SPENT marks the expense so you can fill it in. Refunds that arrive this way wait for your review.</li>
+<li><strong>Foreign currency:</strong> captured purchases are recorded in the capture currency you chose under Profile → Automatic Capture. Abroad, turn on Travel Mode and SPENT records in the local currency. You can fix the currency of any expense in History.</li>
+</ul>
+<p>Captured expenses go to your personal city by default. If you share a city with a partner or roommates, you can choose to send captures there instead; see <a href="/shared-budget/">shared expense tracking for couples and roommates</a>.</p></section>
+
+<section id="check"><h2>Check that it works</h2>
+<ol>
+<li>Make a small Apple Pay purchase with a card you selected.</li>
+<li>Check that Wallet or your bank showed a transaction notification. Without one, no app can capture the purchase.</li>
+<li>Open <strong>History</strong> in SPENT and confirm that the amount, merchant and category are right, and that the purchase appears once.</li>
+<li>If nothing arrived, open the automation in Shortcuts and make sure it is set to Run Immediately, then add the purchase by hand.</li>
+</ol>
+<figure class="guide-shot"><img src="/assets/screen-history.webp" width="560" height="1019" loading="lazy" alt="SPENT expense history with date, amount and category"><figcaption>Expense history in SPENT, where you can compare each captured purchase with what you paid (app shown in Hebrew).</figcaption></figure></section>
+
+<section><h2>Other ways to track Apple Pay spending</h2>
+<ul>
+<li><strong>Wallet's own transaction list:</strong> some cards show recent purchases in Wallet. How much history you see depends on the card issuer.</li>
+<li><strong>Shortcuts with Notes or Numbers:</strong> the same Wallet trigger can append each purchase to a note or a spreadsheet, with no extra app. You get a log, but no categories, budgets or summaries.</li>
+<li><strong>Bank-linked budgeting apps:</strong> they import every transaction, including cash withdrawals and transfers, but you have to give them access to your bank.</li>
+</ul>
+<p>SPENT sits between these: purchases are captured automatically, nothing is linked to your bank, and each expense goes into budgets, monthly summaries and a 3D city that shows where the month went. It also runs on <a href="/android-expense-tracker/">Android</a>, where it can record purchases from Google Wallet and card notifications.</p></section>
+
+<section class="guide-faq"><h2>Questions about automatic Apple Pay tracking</h2>
+<h3>Can I track Apple Pay spending without connecting my bank?</h3><p>Yes. A Shortcuts automation on your iPhone passes the amount and merchant of each supported Apple Pay purchase to SPENT. SPENT never asks for bank login details and does not read your bank account.</p>
+<h3>Which iOS version do I need?</h3><p>The guided setup in SPENT needs iOS 27 or later. On earlier versions SPENT offers a manual setup option, but transaction details may be incomplete, so you may need to fill some in yourself.</p>
+<h3>Will every purchase be captured?</h3><p>No. Only Apple Pay purchases that produce a transaction notification in Wallet can be captured, and that depends on your card and bank. Cash, bank transfers and other payments need to be added by hand.</p>
+<h3>Is SPENT free?</h3><p>Yes, SPENT is free to download on the App Store and Google Play.</p></section>
+
+<section><h2>Related guides</h2><ul>
+<li><a href="/expense-tracker-iphone/">Expense tracker for iPhone without a bank connection</a></li>
+<li><a href="/budget-app/">Monthly budget app for iPhone: plan and review your month</a></li>
+<li><a href="/shared-budget/">Shared expense tracking for couples and roommates</a></li>
+<li><a href="/android-expense-tracker/">Expense tracking on Android without bank linking</a></li>
+</ul></section>
+<section><h2>Sources and product details</h2><p><a href="https://apps.apple.com/app/id6809588178">SPENT — App Store</a> · <a href="https://play.google.com/store/apps/details?id=com.biniwis.spent">SPENT — Google Play</a> · <a href="/privacy.html">Privacy policy</a> · <a href="mailto:spentapp.support@gmail.com">spentapp.support@gmail.com</a></p><p>Setup steps were checked against the setup guide in the SPENT app on November 26, 2026. Shortcuts and Wallet menus can change between iOS versions. This is a developer guide, not an independent review.</p></section>
+<section class="guide-author" id="author"><h2>About the author</h2><p><strong>Binyamin Wisemon</strong> designs and builds SPENT. This guide explains what automatic capture can and cannot do. Found something out of date? <a href="mailto:spentapp.support@gmail.com">Let us know</a>.</p></section>
+</main><footer><a href="/">SPENT</a> · <a href="/privacy.html">Privacy policy</a></footer></div></body></html>

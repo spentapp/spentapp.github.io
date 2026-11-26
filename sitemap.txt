@@ -13,3 +13,4 @@ https://spentapp.github.io/android-expense-tracker/
 https://spentapp.github.io/he/android-expense-tracker/
 https://spentapp.github.io/he/automatic-expense-tracking/
 https://spentapp.github.io/he/couples-budget-app/
+https://spentapp.github.io/apple-pay-expense-tracking/
